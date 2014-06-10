@@ -1,10 +1,41 @@
 <?php
 
+// Add Research News Custom Post Type
+function create_news_posttype() {
+	register_post_type( 'research_news',
+		array(
+			'labels' => array(
+				'name' => __( 'Research News Items' ),
+				'singular_name' => __( 'Research News Item' ),
+				'add_new_item' => __( 'Add New News Item' )
+			),
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'has_archive' => true,
+		'capability_type'    => 'post',
+		'rewrite' => array('slug' => 'news'),
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields' )
+		)
+	);
+}
+add_action( 'init', 'create_news_posttype' );
+function news_rewrite_flush() {
+    flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'news_rewrite_flush' );
+
 if ( !defined( 'SHOESTRAP_OPT_NAME' ) )
 	define( 'SHOESTRAP_OPT_NAME', 'shoestrap' );
 
 // Include some admin options.
 require_once locate_template( 'lib/admin-options.php' );
+require_once locate_template( 'lib/vu-banner-options.php' );
+require_once locate_template( 'lib/vu-brand-options.php' );
+//load overrides
+require_once locate_template('lib/overrides/sidebar.php');
+require_once locate_template('lib/overrides/footer.php');
 
 /*
  * Add a less file from our child theme to the parent theme's compiler.
@@ -35,7 +66,7 @@ function shoestrap_child_hijack_compiler( $css ) {
  */
 // Uncomment the line below to enqueue the stylesheet
 // Use a priority greater than 100 to enqueue it after the main stylesheet
-// add_action('wp_enqueue_scripts', 'shoestrap_child_load_stylesheet', 100);
+add_action('wp_enqueue_scripts', 'shoestrap_child_load_stylesheet', 102);
 function shoestrap_child_load_stylesheet() {
 	wp_enqueue_style( 'shoestrap_child_css', get_stylesheet_uri(), false, null );
 }
@@ -49,7 +80,7 @@ function shoestrap_pjax() {
 		 */
 		function shoestrap_pjax_script() {
 			wp_register_script( 'shoestrap_pjax_js', get_stylesheet_directory_uri() . '/assets/js/jquery.pjax.js', false, null, true );
-			wp_enqueue_script( 'shoestrap_pjax_js' );	
+			wp_enqueue_script( 'shoestrap_pjax_js' );
 		}
 		add_action( 'wp_enqueue_scripts', 'shoestrap_pjax_script', 101 );
 
