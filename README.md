@@ -1,5 +1,5 @@
 VU Shoestrap Child Theme
 =====================
 
-#Overview
+##Overview
 This is a Shoestrap child theme optimized for use at Vanderbilt University
