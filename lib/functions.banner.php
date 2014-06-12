@@ -4,17 +4,20 @@ if ( !function_exists( 'shoestrap_banner' ) ) :
  * The Banner template
  */
 function shoestrap_banner() {
+  global $ss_framework;
   global $ss_settings;
   if ( $ss_settings['banner_toggle'] == 1 ) :
   ?>
-    <header>
-      <a class="vubanner" href="<?php echo home_url(); ?>/">
-        <h1>
-          <?php if ( function_exists( 'shoestrap_banner_display' ) ) : ?>
-            <?php shoestrap_banner_display(); ?>
-          <?php endif; ?>
-        </h1>
-      </a>
+    <header class="vubanner">
+      <?php echo $ss_framework->open_container( 'div' ); ?>
+        <a href="<?php echo home_url(); ?>/">
+          <h1>
+            <?php if ( function_exists( 'shoestrap_banner_display' ) ) : ?>
+              <?php shoestrap_banner_display(); ?>
+            <?php endif; ?>
+          </h1>
+        </a>
+      <?php echo $ss_framework->close_container( 'div' ); ?>
     </header>
   <?php endif;
 }
@@ -30,7 +33,7 @@ function shoestrap_banner_css() {
   global $ss_settings;
   $banner_bg = $ss_settings['banner_bg'];
   $style = '';
-  $style .= '.vubanner h1 {background: ' . $banner_bg . '}';
+  $style .= '.vubanner {background: ' . $banner_bg . '}';
   wp_add_inline_style( 'shoestrap_css', $style );
 }
 endif;

@@ -31,7 +31,7 @@ if ( !defined( 'SHOESTRAP_OPT_NAME' ) )
 
 // Include some admin options.
 require_once locate_template( 'lib/admin-options.php' );
-require_once locate_template( 'lib/vu-banner-options.php' );
+#require_once locate_template( 'lib/vu-banner-options.php' );
 require_once locate_template( 'lib/vu-brand-options.php' );
 //load overrides
 require_once locate_template('lib/overrides/sidebar.php');

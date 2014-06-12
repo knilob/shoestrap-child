@@ -19,7 +19,7 @@ function shoestrap_brandbar_options( $sections ) {
 	);
 
 	$fields[] = array(
-	  'title'     => __( 'Vanderbilt Brandbar', 'shoestrap_child' ),
+	  'title'     => __( 'Choose Your Vanderbilt Brandbar', 'shoestrap_child' ),
 	  'desc'      => 'Select the brand bar to use at the top of your website. Default: Vanderbilt',
 	  'id'        => 'brandbar',
 	  'type'      => 'select',
@@ -38,6 +38,53 @@ function shoestrap_brandbar_options( $sections ) {
 		),
 		'default'   => 'vu'
 	);
+	$fields[] = array(
+		'title'		=> __( 'Home Page Slider', 'shoestrap_child' ),
+		'desc'		=> 'Enable this option to display an image slider on your homepage.',
+		'id'			=> 'slider',
+		'type'		=> 'switch'
+	);
+
+	 // Branding Options
+  $bannerSection = array(
+    'title' => __( 'Graphic Header', 'shoestrap_child' ),
+    'icon'    => 'el-icon-chevron-right',
+		'subsection' => true,
+  );
+
+  $url = admin_url( 'widgets.php' );
+
+
+  $bannerFields[] = array(
+    'title'       => __( 'Graphical Banner', 'shoestrap_child' ),
+    'desc'        => 'Turn this ON to display the banner. Default: OFF',
+    'id'          => 'banner_toggle',
+    'customizer'  => array(),
+    'default'     => 0,
+    'type'        => 'switch',
+    // 'required'    => array('advanced_toggle','=',array('1'))
+  );
+
+
+  $bannerFields[] = array(
+    'title'       => __( 'Banner Background Color', 'shoestrap_child' ),
+    'desc'        => 'Select the background color for your banner. Default: #EEEEEE.',
+    'id'          => 'banner_bg',
+    'default'     => '#EEEEEE',
+    'customizer'  => array(),
+    'transparent' => false,
+    'type'        => 'color'
+    //'required'    => array('header_toggle','=',array('1')),
+  );
+
+   $bannerFields[] = array(
+    'title'       => __( 'Banner Image', 'shoestrap_child' ),
+    'desc'        => 'Upload a banner image using the media uploader, or define the URL directly.',
+    'id'          => 'banner',
+    'default'     => '',
+    'type'        => 'media',
+    'customizer'  => array(),
+  );
 
 	$sidebarSection = array(
 		'title'   => __( 'Right Sidebar', 'shoestrap-child' ),
@@ -46,7 +93,7 @@ function shoestrap_brandbar_options( $sections ) {
 	);
 
 	$sidebarFields[] = array(
-		'title'		=> __( 'Enable VU News Feed', 'shoestrap_child' ),
+		'title'		=> __( 'VU News Feed', 'shoestrap_child' ),
 		'desc'		=> 'Select this option to display a news feed from RSS feed of your choosing in the sidebar on your site.',
 		'id'			=> 'vunewsfeed',
 		'type'		=> 'switch',
@@ -78,7 +125,7 @@ function shoestrap_brandbar_options( $sections ) {
 	);
 
 	$sidebarFields[] = array(
-		'title'		=> __( 'Enable VU Calendar Feed', 'shoestrap_child' ),
+		'title'		=> __( 'VU Calendar Feed', 'shoestrap_child' ),
 		'desc'		=> 'Select this option to display a calendar feed from <a href="http://events.vanderbilt.edu">http://events.vanderbilt.edu</a> in the sidebar on your site.',
 		'id'			=> 'vucalfeed',
 		'type'		=> 'switch',
@@ -102,14 +149,18 @@ function shoestrap_brandbar_options( $sections ) {
 	);
 
 	$section['fields'] = $fields;
-
+	$bannerSection['fields'] = $bannerFields;
 	$sidebarSection['fields'] = $sidebarFields;
 
 	$section = apply_filters( 'shoestrap_vu_brand_options_modifier', $section );
+	$bannerSection = apply_filters( 'shoestrap_vu_brand_options_modifier', $bannerSection );
 	$sidebarSection = apply_filters( 'shoestrap_vu_brand_options_modifier', $sidebarSection );
 
 	$sections[] = $section;
+	$sections[] = $bannerSection;
 	$sections[] = $sidebarSection;
 	return $sections;
 }
 endif;
+
+include_once( dirname( __FILE__ ) . '/functions.banner.php' );
