@@ -9,7 +9,7 @@ function my_custom_footer_override() {
     <div class="row">
       <?php shoestrap_footer_content_custom(); ?>
       <p>
-        <span><a href="<?php echo wp_login_url(); ?>">©</a></span>
+        <span><a href="http://www.vanderbilt.edu/wp-redirect<?php global $current_blog; $blog_path = $current_blog->path; echo $blog_path; ?>">©</a></span>
         <script type="text/javascript">date=new Date(); year=date.getFullYear(); document.write(year);</script>&nbsp;Vanderbilt University · <a href="http://web.vanderbilt.edu/">Site Development: University Web Communications</a>
       </p>
     </div>
