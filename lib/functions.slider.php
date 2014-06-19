@@ -3,38 +3,43 @@ if ( !function_exists( 'shoestrap_slider' ) ) :
 /*
  * The Banner template
  */
-function shoestrap_banner() {
+function shoestrap_slider() {
   global $ss_settings;
-  if ( $ss_settings['slider_toggle'] == 1 ) :
+  if ( $ss_settings['slider-toggle'] == 1 ) :
   ?>
-    <header>
-      <a class="vubanner" href="<?php echo home_url(); ?>/">
-        <h1>
-          <?php if ( function_exists( 'shoestrap_banner_display' ) ) : ?>
-            <?php shoestrap_banner_display(); ?>
-          <?php endif; ?>
-        </h1>
-      </a>
-    </header>
-  <?php endif;
+    <div class="slider">
+      <?php if ( function_exists( 'shoestrap_slider_display' ) ) : ?>
+        <?php shoestrap_slider_display(); ?>
+      <?php endif; ?>
+    </div>
+  <?php
+  endif;
 }
 endif;
 
-add_action( 'shoestrap_pre_main', 'shoestrap_slider', 5 );
+add_action( 'shoestrap_pre_wpcontent', 'shoestrap_slider', 5 );
 
 if ( !function_exists( 'shoestrap_slider_display' ) ) :
 /*
  * The site slider.
  * If no custom banner is uploaded, use the sitename
  */
-function shoestrap_banner_display() {
+function shoestrap_slider_display() {
   global $ss_settings;
-  $banner  = $ss_settings['banner'];
-
-  if ( !empty( $banner['url'] ) )
-    echo '<img id="site-banner" src="' . $banner['url'] . '" alt="' . get_bloginfo( 'name' ) . '">';
-  else
-    echo '<span class="sitename">' . bloginfo( 'name' ) . '</span>';
+  if ($ss_settings['slide-images'] != "") {
+    foreach ($ss_settings['slide-images'] as $slide) {
+      echo "<div>";
+      if ($slide['url'] != "") {
+        echo '<a href="'.$slide['url'].'">';
+      }
+      echo '<img src="'.$slide['image'].'" title="'.$slide['title'].'" alt="'.$slide['title'].'">';
+      if ($slide['url'] != "") {
+        echo '</a>';
+      }
+      echo "</div>";
+    }
+  }
+  print_r($ss_settings['slide-images']);
 }
 endif;
 

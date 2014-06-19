@@ -41,9 +41,21 @@ function shoestrap_brandbar_options( $sections ) {
 	$fields[] = array(
 		'title'		=> __( 'Home Page Slider', 'shoestrap_child' ),
 		'desc'		=> 'Enable this option to display an image slider on your homepage.',
-		'id'			=> 'slider',
-		'type'		=> 'switch'
+		'id'			=> 'slider-toggle',
+		'type'		=> 'switch',
+		'default'	=> 'false'
 	);
+	$fields[] = array(
+    'id'          => 'slide-images',
+    'type'        => 'slides',
+    'title'       => __('Home Page Slider Options', 'shoestrap_child'),
+    'subtitle'    => __('You can add unlimited slides with drag and drop sorting.', 'shoestrap_child'),
+    'placeholder' => array(
+        'title'           => __('Add your slide title.', 'shoestrap_child'),
+        'description'     => __('Add your description here.', 'shoestrap_child'),
+        'url'             => __('Add a link for the slide.', 'shoestrap_child'),
+	   )
+	 );
 
 	 // Branding Options
   $bannerSection = array(
@@ -163,4 +175,5 @@ function shoestrap_brandbar_options( $sections ) {
 }
 endif;
 
+include_once( dirname( __FILE__ ) . '/functions.slider.php' );
 include_once( dirname( __FILE__ ) . '/functions.banner.php' );
