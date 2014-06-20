@@ -71,7 +71,6 @@ function shoestrap_brandbar_options( $sections ) {
     'title'       => __( 'Graphical Banner', 'shoestrap_child' ),
     'desc'        => 'Turn this ON to display the banner. Default: OFF',
     'id'          => 'banner_toggle',
-    'customizer'  => array(),
     'default'     => 0,
     'type'        => 'switch',
     // 'required'    => array('advanced_toggle','=',array('1'))
@@ -80,10 +79,10 @@ function shoestrap_brandbar_options( $sections ) {
 
   $bannerFields[] = array(
     'title'       => __( 'Banner Background Color', 'shoestrap_child' ),
-    'desc'        => 'Select the background color for your banner. Default: #EEEEEE.',
+    'desc'        => __( 'Select the background color for your banner. Default: #EEEEEE.', 'shoestrap_child'),
     'id'          => 'banner_bg',
     'default'     => '#EEEEEE',
-    'customizer'  => array(),
+    'validate'  	=> 'color',
     'transparent' => false,
     'type'        => 'color'
     //'required'    => array('header_toggle','=',array('1')),
@@ -95,7 +94,6 @@ function shoestrap_brandbar_options( $sections ) {
     'id'          => 'banner',
     'default'     => '',
     'type'        => 'media',
-    'customizer'  => array(),
   );
 
 	$sidebarSection = array(

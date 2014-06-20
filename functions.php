@@ -2,23 +2,23 @@
 
 // Add Research News Custom Post Type
 function create_news_posttype() {
-	register_post_type( 'research_news',
-		array(
-			'labels' => array(
-				'name' => __( 'Research News Items' ),
-				'singular_name' => __( 'Research News Item' ),
-				'add_new_item' => __( 'Add New News Item' )
-			),
-		'public' => true,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'has_archive' => true,
-		'capability_type'    => 'post',
-		'rewrite' => array('slug' => 'news'),
-		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields' )
-		)
-	);
+  register_post_type( 'research_news',
+    array(
+      'labels' => array(
+        'name' => __( 'Research News Items' ),
+        'singular_name' => __( 'Research News Item' ),
+        'add_new_item' => __( 'Add New News Item' )
+      ),
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'has_archive' => true,
+    'capability_type'    => 'post',
+    'rewrite' => array('slug' => 'news'),
+    'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields' )
+    )
+  );
 }
 add_action( 'init', 'create_news_posttype' );
 function news_rewrite_flush() {
@@ -27,7 +27,7 @@ function news_rewrite_flush() {
 add_action( 'after_switch_theme', 'news_rewrite_flush' );
 
 if ( !defined( 'SHOESTRAP_OPT_NAME' ) )
-	define( 'SHOESTRAP_OPT_NAME', 'shoestrap' );
+  define( 'SHOESTRAP_OPT_NAME', 'shoestrap' );
 
 // Include some admin options.
 require_once locate_template( 'lib/admin-options.php' );
@@ -43,8 +43,8 @@ require_once locate_template('lib/overrides/footer.php');
  */
 add_filter( 'shoestrap_compiler', 'shoestrap_child_styles' );
 function shoestrap_child_styles( $bootstrap ) {
-	return $bootstrap . '
-	@import "' . get_stylesheet_directory() . '/assets/less/child.less";';
+  return $bootstrap . '
+  @import "' . get_stylesheet_directory() . '/assets/less/child.less";';
 }
 
 /*
@@ -52,8 +52,8 @@ function shoestrap_child_styles( $bootstrap ) {
  */
 add_filter( 'shoestrap_compiler_output', 'shoestrap_child_hijack_compiler' );
 function shoestrap_child_hijack_compiler( $css ) {
-	// $css = str_replace( '', '', $css );
-	return $css;
+  // $css = str_replace( '', '', $css );
+  return $css;
 }
 
 /*
@@ -68,56 +68,45 @@ function shoestrap_child_hijack_compiler( $css ) {
 // Use a priority greater than 100 to enqueue it after the main stylesheet
 add_action('wp_enqueue_scripts', 'shoestrap_child_load_stylesheet', 102);
 function shoestrap_child_load_stylesheet() {
-	wp_enqueue_style( 'shoestrap_child_css', get_stylesheet_uri(), false, null );
+  wp_enqueue_style( 'shoestrap_child_css', get_stylesheet_uri(), false, null );
 }
 
 
-function shoestrap_pjax() {
-	global $ss_settings;
-	if ( $ss_settings['pjax'] == 1 ) {
-		/**
-		 * Enqueue pjax.js
-		 */
-		function shoestrap_pjax_script() {
-			wp_register_script( 'shoestrap_pjax_js', get_stylesheet_directory_uri() . '/assets/js/jquery.pjax.js', false, null, true );
-			wp_enqueue_script( 'shoestrap_pjax_js' );
-		}
-		add_action( 'wp_enqueue_scripts', 'shoestrap_pjax_script', 101 );
+function shoestrap_load_slider() {
+  global $ss_settings;
+  if ( $ss_settings['slider-toggle'] == 1 ) {
+    /**
+     * Enqueue Slick Carousel Javascript
+     */
+    function shoestrap_slider_script() {
+      wp_register_script( 'shoestrap_slider_js', get_stylesheet_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.min.js', false, null, true );
+      wp_enqueue_script( 'shoestrap_slider_js' );
+    }
+    add_action( 'wp_enqueue_scripts', 'shoestrap_slider_script', 101 );
+    /**
+     * Enqueue Slick Carousel Styles
+     */
+    function shoestrap_slider_styles() {
+      wp_enqueue_style( 'shoestrap_slider_css', get_stylesheet_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.css', false, null );
+    }
+    add_action( 'wp_enqueue_scripts', 'shoestrap_slider_styles', 103 );
 
-		/**
-		 * Open a container as a content area for PJAX
-		 */
-		function shoestrap_pjax_open_container() { ?>
-			<div id="pjax-container">
-			<?php
-		}
-		add_action( 'shoestrap_pre_wrap', 'shoestrap_pjax_open_container' );
+    /**
+     * Our Slick Carousel script
+     */
+    function shoestrap_slider_trigger_script() { ?>
+      <script>
+      var $j = jQuery.noConflict();
+      $j('.slider').slick({
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+      });
+      </script>
+      <?php
+    }
+    add_action( 'wp_footer', 'shoestrap_slider_trigger_script', 200 );
 
-		/**
-		 * Close previous container
-		 */
-		function shoestrap_pjax_close_container() { ?>
-			</div>
-			<?php
-		}
-		add_action( 'shoestrap_pre_footer', 'shoestrap_pjax_close_container' );
-
-		/**
-		 * Our PJAX script
-		 */
-		function shoestrap_pjax_trigger_script() { ?>
-			<script>
-			var $j = jQuery.noConflict();
-
-			$j(document).on('pjax:send', function() {
-				$j('.main').fadeToggle("fast", "linear")
-			})
-			$j(document).pjax('nav a, aside a, .breadcrumb a', '#pjax-container')
-			</script>
-			<?php
-		}
-		add_action( 'wp_footer', 'shoestrap_pjax_trigger_script', 200 );
-
-	}
+  }
 }
-add_action( 'init', 'shoestrap_pjax' );
+add_action( 'init', 'shoestrap_load_slider' );

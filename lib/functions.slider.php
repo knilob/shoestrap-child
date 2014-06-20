@@ -39,7 +39,6 @@ function shoestrap_slider_display() {
       echo "</div>";
     }
   }
-  print_r($ss_settings['slide-images']);
 }
 endif;
 
