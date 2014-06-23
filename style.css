@@ -11,30 +11,35 @@ Template:           shoestrap-3
 .panel-default>.panel-heading {font-family: Georgia,Times, serif;font-weight:bold;color: #fff;background:none;border:none;}
 
 /* Banner */
-.vubanner{text-align:center}
-.vubanner h1{margin:0px}
+.vubanner{
+  text-align: center;
+}
+.vubanner h1{
+  margin: 0;
+  line-height: 100%;
+}
 
 
 /* breadcrumb */
 .breadcrumb{background:none;margin-bottom: 5px;}
 
 /* Body */
-.page-header {margin-top:0px;}
-.page-header h1{margin-top:0px;}
-.main h2{color: #555;background: #ECECEC;border: 1px solid #DDD;padding: 5px 10px;border-radius: 8px;}
+.page-header {margin-top:0;}
+.page-header h1{margin-top:0;}
+.main h2{color: #555;background: #ECECEC;border: 1px solid #DDD;padding: 5px 10;border-radius: 8px;}
 .main h3{color: #666;line-height: 1.55em;}
 
 /* Sidebar */
 .widget.panel {border:none;background:none}
 .sidebar .panel-default>.panel-heading {color: #fff;background:#333;padding: 15px 15px 15px 25px;}
-.sidebar{background:#eee;padding:0px}
+.sidebar{background:#eee;padding:0}
 
 /* Footer */
-footer.content-info{background:#333 url('http://www.vanderbilt.edu/asset/i/footerbg.jpg') top 10px left 20% no-repeat;border-top: 7px solid #d8ab4c;}
+footer.content-info{background:#333 url('http://www.vanderbilt.edu/asset/i/footerbg.jpg') top 10 left 20% no-repeat;border-top: 7px solid #d8ab4c;}
 footer h4 {color: #FC6;}
 footer {font-size: 12px}
 footer .panel-heading{font-size: 14px}
-footer .widget_flickr .panel-heading{padding-top:0px;}
+footer .widget_flickr .panel-heading{padding-top:0;}
 #yourvu, #popular {padding: 0;background: #222;padding: 15px;line-height: 1;border-radius: 15px;}
 #yourvu ul, #popular ul {list-style: none;display:inline-block;padding-left:5px}
 #yourvu ul li a, #popular ul li a {display: block;padding: 4px 8px;}
