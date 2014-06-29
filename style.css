@@ -43,13 +43,112 @@ right: 5px;
 .sidebar{background:#eee;padding:0}
 
 /* Footer */
-footer.content-info{background:#333 url('http://www.vanderbilt.edu/asset/i/footerbg.jpg') top 10 left 20% no-repeat;border-top: 7px solid #d8ab4c;}
-footer h4 {color: #FC6;}
-footer {font-size: 12px}
+footer.content-info {
+  background:#333 url('//www4.vanderbilt.edu/asset/i/footerbg.jpg') 10% 20% no-repeat;
+  border-top: 7px solid #d8ab4c;
+}
+footer h3, footer h4 {
+  color: #FC6;
+  font-family: Georgia,Times,serif;
+  font-size: 125%;
+  line-height: 125%;
+  margin-top: 10px;
+}
+footer {
+  font-size: 12px;
+  color: #999;
+  margin: 0;
+}
 footer .panel-heading{font-size: 14px}
 footer .widget_flickr .panel-heading{padding-top:0;}
+footer section.widget {
+  background: #222;
+  padding: 15px;
+  line-height: 1;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+footer section .nav-list {
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  overflow: hidden;
+}
+footer section .nav-list > li {
+  border: none;
+}
+footer section .nav-list > li > a {
+  color: #CCC;
+  padding: 4px 8px;
+  text-decoration: none;
+}
+footer section .nav-list > li > a:hover {
+  background-color: transparent;
+  color: #FC6;
+}
 #yourvu, #popular {padding: 0;background: #222;padding: 15px;line-height: 1;border-radius: 15px;}
 #yourvu ul, #popular ul {list-style: none;display:inline-block;padding-left:5px}
 #yourvu ul li a, #popular ul li a {display: block;padding: 4px 8px;}
 #yourvu ul li a:link, #yourvu ul li a:visited, #popular ul li a:link, #popular ul li a:visited {color: #CCC;text-decoration: none;}
 #yourvu ul li a:hover, #popular ul li a:hover {color: #FC6;}
+.social ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  height: 48px;
+}
+.social li {
+  float: left;
+  display: block;
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
+.social li a {
+  display: block;
+  height: 45px;
+  width: 45px;
+  border: none;
+  text-decoration: none;
+  text-indent: -9999px;
+  direction: ltr;
+  background-image: url('https://www4.vanderbilt.edu/asset/i/social-icons.png');
+  opacity: 0.75;
+}
+.social li a:hover {
+  opacity: 1;
+}
+.youtube a { background-position: 0 -1520px;}
+.facebook a { background-position: 0 0;}
+.instagram a { background-position: 0 -380px; }
+.twitter a { background-position: 0 -1330px; }
+.itunes a { background-position: 0 -475px;}
+.flickr a { background-position: 0 -95px;}
+.myspace a{background-position: 0 -665px;}
+.rss a { background-position: 0 -855px;}
+.share a { background-position: 0 -1045px; }
+.linkedin a { background-position: 0 -570px;}
+.googleplus a { background-position: 0 -285px;}
+.foursquare a { background-position: 0 -190px; }
+.pinterest a { background-position: 0 -760px; }
+.storify a { background-position: 0 -1140px; }
+.tumblr a { background-position: 0 -1235px; }
+.vine a { background-position: 0 -1425px; }
+.anchorlink a { background-position: 0 0; }
+
+footer p {
+  clear: both;
+  margin: 0;
+  padding: 5px 0;
+  line-height: 1.7em;
+}
+footer p a {
+  color: #999;
+  text-decoration: none;
+  border-bottom: 1px dotted #666;
+}
+footer p a:hover {
+  color: #d8ab4c;
+  text-decoration: none;
+  border-bottom: 1px dotted #d8ab4c;
+}

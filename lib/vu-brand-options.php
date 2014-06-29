@@ -165,15 +165,23 @@ function shoestrap_brandbar_options( $sections ) {
 	);
 
 	$footerFields[] = array(
-		'title' 	=> __( 'Display Social Media Icons in the Footer' ),
+		'title' 	=> __( 'VU Social Media Section' ),
 		'id' 			=> 'vufootericons',
 		'type'		=> 'switch',
 		'default'	=> '0'
 	);
 
 	$footerFields[] = array(
+		'title'		=> __( 'VU Social Media Section Title', 'shoestrap_child' ),
+		'desc'		=> 'Enter what will appear as the title of the social media icons section (defaults to "Connect with Us")',
+		'id'			=> 'vufootertitle',
+		'type'		=> 'text',
+		'default' => 'Connect with Us'
+	);
+
+	$footerFields[] = array(
 		'title' 	=> __( 'VU AnchorLink URL' ),
-		'desc'		=> 'Enter your AnchorLink URL to display an AnchorLink icon in the footer beside the other social media links.',
+		'desc'		=> 'If you want to add an AnchorLink URL, please enter it here to display an AnchorLink icon in the footer beside the other social media links.',
 		'id'			=> 'vuanchorlink',
 		'type'		=> 'text',
 		'default'	=> ''

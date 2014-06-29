@@ -1,36 +1,9 @@
 <?php
-
-// Add Research News Custom Post Type
-function create_news_posttype() {
-  register_post_type( 'research_news',
-    array(
-      'labels' => array(
-        'name' => __( 'Research News Items' ),
-        'singular_name' => __( 'Research News Item' ),
-        'add_new_item' => __( 'Add New News Item' )
-      ),
-    'public' => true,
-    'publicly_queryable' => true,
-    'show_ui'            => true,
-    'show_in_menu'       => true,
-    'has_archive' => true,
-    'capability_type'    => 'post',
-    'rewrite' => array('slug' => 'news'),
-    'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields' )
-    )
-  );
-}
-add_action( 'init', 'create_news_posttype' );
-function news_rewrite_flush() {
-    flush_rewrite_rules();
-}
-add_action( 'after_switch_theme', 'news_rewrite_flush' );
-
 if ( !defined( 'SHOESTRAP_OPT_NAME' ) )
   define( 'SHOESTRAP_OPT_NAME', 'shoestrap' );
 
 // Include some admin options.
-require_once locate_template( 'lib/admin-options.php' );
+#require_once locate_template( 'lib/admin-options.php' );
 #require_once locate_template( 'lib/vu-banner-options.php' );
 require_once locate_template( 'lib/vu-brand-options.php' );
 //load overrides
