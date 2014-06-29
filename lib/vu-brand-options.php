@@ -158,17 +158,41 @@ function shoestrap_brandbar_options( $sections ) {
 		'default'	=> 'myvu'
 	);
 
+	$footerSection = array(
+		'title'   => __( 'Footer', 'shoestrap-child' ),
+		'icon'    => 'el-icon-chevron-right',
+		'subsection' => true,
+	);
+
+	$footerFields[] = array(
+		'title' 	=> __( 'Display Social Media Icons in the Footer' ),
+		'id' 			=> 'vufootericons',
+		'type'		=> 'switch',
+		'default'	=> '0'
+	);
+
+	$footerFields[] = array(
+		'title' 	=> __( 'VU AnchorLink URL' ),
+		'desc'		=> 'Enter your AnchorLink URL to display an AnchorLink icon in the footer beside the other social media links.',
+		'id'			=> 'vuanchorlink',
+		'type'		=> 'text',
+		'default'	=> ''
+	);
+
 	$section['fields'] = $fields;
 	$bannerSection['fields'] = $bannerFields;
 	$sidebarSection['fields'] = $sidebarFields;
+	$footerSection['fields'] = $footerFields;
 
 	$section = apply_filters( 'shoestrap_vu_brand_options_modifier', $section );
 	$bannerSection = apply_filters( 'shoestrap_vu_brand_options_modifier', $bannerSection );
 	$sidebarSection = apply_filters( 'shoestrap_vu_brand_options_modifier', $sidebarSection );
+	$footerSection = apply_filters( 'shoestrap_vu_brand_options_modifier', $footerSection );
 
 	$sections[] = $section;
 	$sections[] = $bannerSection;
 	$sections[] = $sidebarSection;
+	$sections[] = $footerSection;
 	return $sections;
 }
 endif;

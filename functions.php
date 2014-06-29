@@ -66,7 +66,7 @@ function shoestrap_child_hijack_compiler( $css ) {
  */
 // Uncomment the line below to enqueue the stylesheet
 // Use a priority greater than 100 to enqueue it after the main stylesheet
-add_action('wp_enqueue_scripts', 'shoestrap_child_load_stylesheet', 102);
+add_action('wp_enqueue_scripts', 'shoestrap_child_load_stylesheet', 103);
 function shoestrap_child_load_stylesheet() {
   wp_enqueue_style( 'shoestrap_child_css', get_stylesheet_uri(), false, null );
 }
@@ -89,7 +89,7 @@ function shoestrap_load_slider() {
     function shoestrap_slider_styles() {
       wp_enqueue_style( 'shoestrap_slider_css', get_stylesheet_directory_uri() . '/assets/bower_components/slick-carousel/slick/slick.css', false, null );
     }
-    add_action( 'wp_enqueue_scripts', 'shoestrap_slider_styles', 103 );
+    add_action( 'wp_enqueue_scripts', 'shoestrap_slider_styles', 102 );
 
     /**
      * Our Slick Carousel script
@@ -100,7 +100,9 @@ function shoestrap_load_slider() {
       $j('.slider').slick({
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 5000,
+        dots: true,
+        fade: true,
       });
       </script>
       <?php
