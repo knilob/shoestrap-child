@@ -26,7 +26,7 @@ function my_custom_sidebar_override() {
         }
         // else  { trigger_error('XSL transformation failed.', E_USER_ERROR); }
       ?>
-      <li class="more"><a href="https://events.vanderbilt.edu/calendar/list?tags=<?php echo $caltag;?>&tagname=<?php bloginfo('name'); ?> Events">View More Events &raquo;</a></li>
+      <li class="more"><a href="https://events.vanderbilt.edu/calendar/list?xtags=<?php echo $caltag;?>&tagname=<?php bloginfo('name'); ?> Events">View More Events &raquo;</a></li>
       </ul>
     </section>
 <?php
