@@ -5,7 +5,7 @@ if ( !function_exists( 'shoestrap_slider' ) ) :
  */
 function shoestrap_slider() {
   global $ss_settings;
-  if ( is_home() && $ss_settings['slider-toggle'] == 1 ) :
+  if ( is_front_page() && $ss_settings['slider-toggle'] == 1 ) :
   ?>
     <div class="slider">
       <?php if ( function_exists( 'shoestrap_slider_display' ) ) : ?>
