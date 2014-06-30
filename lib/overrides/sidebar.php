@@ -39,7 +39,7 @@ function my_custom_sidebar_override() {
       'items' => $ss_settings['vunewsfeeditems']
     );
     $args = array(
-      'before_widget' => '<section class="well widget widget_vunewsffed">',
+      'before_widget' => '<section class="well widget widget_vunewsfeed">',
       'after_widget'  => '</section>',
       'before_title'  => '<h3 class="widget-title">',
       'after_title'   => '</h3>'
