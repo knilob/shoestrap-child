@@ -74,6 +74,7 @@ footer .nav-list, footer ul {
   border-radius: 0;
   border: none;
   overflow: hidden;
+  list-style-type: none;
 }
 footer .nav-list > li, footer ul li {
   border: none;
