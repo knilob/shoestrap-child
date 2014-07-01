@@ -68,6 +68,7 @@ footer .widget {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
+  border: none;
 }
 footer .nav-list, footer ul {
   background-color: transparent;
