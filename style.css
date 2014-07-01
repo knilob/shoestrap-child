@@ -74,6 +74,7 @@ footer .nav-list, footer ul {
   border-radius: 0;
   border: none;
   overflow: hidden;
+  padding-left: 0;
   list-style-type: none;
 }
 footer .nav-list > li, footer ul li {
@@ -82,6 +83,8 @@ footer .nav-list > li, footer ul li {
 footer .nav-list > li > a, footer ul li a {
   color: #CCC;
   padding: 4px 8px;
+  position: relative;
+  display: block;
   text-decoration: none;
 }
 footer .nav-list > li > a:hover, footer ul li a:hover {
