@@ -61,7 +61,7 @@ footer {
 }
 footer .panel-heading{font-size: 14px}
 footer .widget_flickr .panel-heading{padding-top:0;}
-footer section.widget {
+footer .widget {
   background: #222;
   padding: 15px;
   line-height: 1;
@@ -69,21 +69,21 @@ footer section.widget {
   -webkit-border-radius: 8px;
   border-radius: 8px;
 }
-footer section .nav-list {
+footer .nav-list, footer ul {
   background-color: transparent;
   border-radius: 0;
   border: none;
   overflow: hidden;
 }
-footer section .nav-list > li {
+footer .nav-list > li, footer ul li {
   border: none;
 }
-footer section .nav-list > li > a {
+footer .nav-list > li > a, footer ul li a {
   color: #CCC;
   padding: 4px 8px;
   text-decoration: none;
 }
-footer section .nav-list > li > a:hover {
+footer .nav-list > li > a:hover, footer ul li a:hover {
   background-color: transparent;
   color: #FC6;
 }
