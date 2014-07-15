@@ -33,7 +33,7 @@ function shoestrap_banner_css() {
   global $ss_settings;
   $banner_bg = $ss_settings['banner_bg'];
   $style = '';
-  $style .= '.vubanner {background: ' . $banner_bg . '}';
+  $style .= '.vubanner {background-color: ' . $banner_bg . '}';
   wp_add_inline_style( 'shoestrap_css', $style );
 }
 endif;
