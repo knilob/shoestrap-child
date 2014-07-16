@@ -2,7 +2,7 @@
 Theme Name:         VU Shoestrap
 Theme URI:          http://web.vanderbilt.edu
 Description:        VU
-Version:            0.2
+Version:            0.3
 Author:             Kelsey Wynns, Bo Link
 Template:           shoestrap-3
 */
@@ -19,141 +19,10 @@ Template:           shoestrap-3
   line-height: 100%;
 }
 
-
-/* breadcrumb */
-.breadcrumb{background:none;margin-bottom: 5px;}
-
 /* Slider */
 .slick-prev {
-left: 5px;
+  left: 5px;
 }
 .slick-next {
-right: 5px;
-}
-
-/* Body */
-.page-header {margin-top:0;}
-.page-header h1{margin-top:0;}
-.main h2{color: #555;background: #ECECEC;border: 1px solid #DDD;padding: 5px 10;border-radius: 8px;}
-/*.main h3{color: #666;line-height: 1.55em;}*/
-
-/* Sidebar */
-.widget.panel {border:none;background:none}
-.sidebar .panel-default>.panel-heading {color: #fff;background:#333;padding: 15px 15px 15px 25px;}
-.sidebar{background:#eee;padding:0}
-
-/* Footer */
-footer.content-info {
-  background:#333 url('//www4.vanderbilt.edu/asset/i/footerbg.jpg') 10% 20% no-repeat;
-  border-top: 7px solid #d8ab4c;
-}
-footer h3, footer h4 {
-  color: #FC6;
-  font-family: Georgia,Times,serif;
-  font-size: 125%;
-  line-height: 125%;
-  margin-top: 10px;
-}
-footer {
-  font-size: 12px;
-  color: #999;
-  margin: 0;
-}
-footer .panel-heading{font-size: 14px}
-footer .widget_flickr .panel-heading{padding-top:0;}
-footer .widget {
-  background: #222;
-  padding: 15px;
-  line-height: 1;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-  border: none;
-}
-footer .nav-list, footer ul {
-  background-color: transparent;
-  border-radius: 0;
-  border: none;
-  overflow: hidden;
-  padding-left: 0;
-  list-style-type: none;
-}
-footer .nav-list > li, footer ul li {
-  border: none;
-}
-footer .nav-list > li > a, footer ul li a {
-  color: #CCC;
-  padding: 4px 8px;
-  position: relative;
-  display: block;
-  text-decoration: none;
-}
-footer .nav-list > li > a:hover, footer ul li a:hover {
-  background-color: transparent;
-  color: #FC6;
-}
-#yourvu, #popular {padding: 0;background: #222;padding: 15px;line-height: 1;border-radius: 15px;}
-#yourvu ul, #popular ul {list-style: none;display:inline-block;padding-left:5px}
-#yourvu ul li a, #popular ul li a {display: block;padding: 4px 8px;}
-#yourvu ul li a:link, #yourvu ul li a:visited, #popular ul li a:link, #popular ul li a:visited {color: #CCC;text-decoration: none;}
-#yourvu ul li a:hover, #popular ul li a:hover {color: #FC6;}
-.social ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 15px 0;
-  height: 48px;
-}
-.social li {
-  float: left;
-  display: block;
-  padding-right: 10px;
-  margin-bottom: 10px;
-}
-.social li a {
-  display: block;
-  height: 45px;
-  width: 45px;
-  border: none;
-  text-decoration: none;
-  text-indent: -9999px;
-  direction: ltr;
-  background-image: url('https://www4.vanderbilt.edu/asset/i/social-icons.png');
-  opacity: 0.75;
-}
-.social li a:hover {
-  opacity: 1;
-}
-.youtube a { background-position: 0 -1520px;}
-.facebook a { background-position: 0 0;}
-.instagram a { background-position: 0 -380px; }
-.twitter a { background-position: 0 -1330px; }
-.itunes a { background-position: 0 -475px;}
-.flickr a { background-position: 0 -95px;}
-.myspace a{background-position: 0 -665px;}
-.rss a { background-position: 0 -855px;}
-.share a { background-position: 0 -1045px; }
-.linkedin a { background-position: 0 -570px;}
-.googleplus a { background-position: 0 -285px;}
-.foursquare a { background-position: 0 -190px; }
-.pinterest a { background-position: 0 -760px; }
-.storify a { background-position: 0 -1140px; }
-.tumblr a { background-position: 0 -1235px; }
-.vine a { background-position: 0 -1425px; }
-.anchorlink a { background-position: 0 0; }
-
-footer p {
-  clear: both;
-  margin: 0;
-  padding: 5px 0;
-  line-height: 1.7em;
-}
-footer p a {
-  color: #999;
-  text-decoration: none;
-  border-bottom: 1px dotted #666;
-}
-footer p a:hover {
-  color: #d8ab4c;
-  text-decoration: none;
-  border-bottom: 1px dotted #d8ab4c;
+  right: 5px;
 }

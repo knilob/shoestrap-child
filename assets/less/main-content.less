@@ -1,0 +1,323 @@
+/* Body */
+.page-header {
+  margin-top:0;
+  h1 {
+    margin-top:0;
+  }
+}
+.main h2 {
+  color: #555;
+  background: #ECECEC;
+  border: 1px solid #DDD;
+  padding: 5px 10;
+  border-radius: 8px;
+}
+/* SECOND LEVEL PAGE SPECIFIC STYLES */
+
+.seccontent {
+  h1, .shadow {
+    color: #333;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    background: url('http://www.vanderbilt.edu/asset/i/titlebg.jpg') bottom left no-repeat;
+    margin: 0;
+    padding: 0 0 20px 15px;
+    a {
+      &:link, &:visited {
+        text-decoration: none;
+        color: #333;
+      }
+      &:hover {
+        color: #d8ab4c;
+      }
+    }
+  }
+  h2 {
+    color: #555;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    background: #ECECEC;
+    border: 1px solid #DDD;
+    padding: 5px 10px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+  }
+}
+.secmain {
+  a {
+    &:link, &:visited {
+      color: #369;
+      border-bottom: 1px dotted #69C;
+      text-decoration: none;
+    }
+    &:hover {
+      color: #d8ab4c;
+      border-bottom: 1px solid #d8ab4c;
+    }
+  }
+  a[href^="mailto:"], a[href$=".pdf"], a[href$=".ppt"], a[href$=".pptx"], a[href$=".doc"], a[href$=".docx"], a[href$=".xls"], a[href$=".xlsx"], a[href$=".zip"], a.external {
+    padding: 2px 22px 2px 0;
+    margin: -2px 0;
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+  a[href^="mailto:"] {
+    background-image: url(http://www.vanderbilt.edu/asset/i/icons/email.png);
+  }
+  a[href$=".pdf"] {
+    background-image: url(http://www.vanderbilt.edu/asset/i/icons/pdf.png);
+  }
+  a[href$=".doc"], a[href$=".docx"] {
+    background-image: url(http://www.vanderbilt.edu/asset/i/icons/doc.png);
+  }
+  a[href$=".xls"], a[href$=".xlsx"] {
+    background-image: url(http://www.vanderbilt.edu/asset/i/icons/xls.png);
+  }
+  a[href$=".zip"] {
+    background-image: url(http://www.vanderbilt.edu/asset/i/icons/zipfile.png);
+  }
+  a[href$=".ppt"], a[href$=".pptx"] {
+    background-image: url(http://www.vanderbilt.edu/asset/i/icons/ppt.png);
+  }
+  a.external {
+    background-image: url(http://www.vanderbilt.edu/asset/i/icons/external-link.png);
+  }
+  td {
+    padding: 5px;
+    a {
+      &:link, &:visited {
+        color: #369;
+        border-bottom: 1px dotted #369;
+        text-decoration:  none;
+      }
+      &:hover {
+        color: #d8ab4c;
+        border-bottom: 1px dotted #666;
+      }
+    }
+  }
+  ul, ol {
+    padding: 0 0 10px 0;
+    margin: 0 0 0 30px;
+    font-size: 1.0em;
+    li {
+      line-height: 1.3;
+      padding: 5px 0;
+      a {
+        &:link, &:visited {
+          color: #369;
+          border-bottom: 1px dotted #69C;
+          text-decoration: none;
+        }
+        &:hover {
+          color: #d8ab4c;
+          border-bottom: 1px solid #d8ab4c;
+        }
+      }
+    }
+  }
+  h3 {
+    color: #666;
+    line-height: 1.55em;
+    font-family: Georgia,Times, serif;
+    a {
+      &:link, &:visited {
+        text-decoration: none;
+        color: #369;
+        border-bottom: 1px dotted #369;
+      }
+      &:hover {
+        color: #666;
+        border-bottom: 1px dotted #666;
+      }
+    }
+  }
+  h4 {
+    font-weight: bold;
+    color: #993D1B;
+    margin: 10px 0;
+    font-family: Georgia,Times, serif;
+    a {
+      &:link, &:visited {
+        color: #993D1B;
+        text-decoration:  none;
+      }
+      &:hover {
+        color: #d8ab4c;
+      }
+    }
+  }
+}
+.rightlinks {
+  a {
+    &:link, &:visited {
+      color: #369;
+      border-bottom: 1px dotted #69C;
+      text-decoration: none;
+    }
+    &:hover {
+      color: #d8ab4c;
+      border-bottom: 1px solid #d8ab4c;
+    }
+  }
+  h4 {
+    font-weight: bold;
+    color: #993D1B;
+    margin: 10px 0;
+    font-family: Georgia,Times, serif;
+    a {
+      &:link, &:visited {
+        color: #993D1B;
+        text-decoration:  none;
+      }
+      &:hover {
+        color: #d8ab4c;
+      }
+    }
+  }
+}
+/* link boxes */
+.linksbox {
+  background: #FAFAFA;
+  border: 1px solid #ECECEC;
+  padding: 15px;
+  margin: 0 20px 0 0;
+}
+.linksboxhalf {
+  width: 50%;
+  float: left;
+  background: #FAFAFA;
+  border: 1px solid #ECECEC;
+  padding: 15px;
+  margin: 0 20px 0 0;
+}
+.boxed {
+  background: #FAFAFA;
+  border: 1px solid #ECECEC;
+  padding: 15px;
+}
+.widelinks {
+  background: #FAFAFA;
+  border: 1px solid #ECECEC;
+  padding: 15px;
+  margin: 0;
+}
+/* lists of links */
+.leftcol, .rightlinks {
+  ul {
+    padding: 0 0 10px 0;
+    margin: 0;
+    list-style: none;
+    line-height: 1.2em;
+    font-size: 1.0em;
+  }
+  li {
+    display:inline;
+    padding: 0;
+    a {
+      display: block;
+      text-decoration: none;
+      padding: 7px 7px 7px 3px;
+      border-bottom: 1px dotted #CCC;
+      &:link {
+        color: #666;
+      }
+      &:visited {
+        color: #999;
+      }
+      &:hover {
+        color: #d8ab4c;
+      }
+      &.last {
+        border-bottom: none;
+      }
+    }
+  }
+}
+.leftcol, .rightcol, .widelinks {
+  p {
+    a {
+      &:link, &:visited {
+        color: #369;
+        text-decoration: none;
+        border-bottom: 1px dotted #69C;
+      }
+      &:hover {
+        color: #d8ab4c;
+        border-bottom: 1px dotted #333;
+      }
+    }
+  }
+}
+/* link icons */
+.noicon {
+  background:transparent none;
+  padding:0;
+  margin:0;
+}
+.callout, .calloutred {
+  background: #006682;
+  padding: 12px;
+  color: #FFF;
+  border-top: 15px solid #993D1B;
+  a {
+    &:link, &:visited {
+      color: #FFF;
+      text-decoration:  none;
+      border-bottom: 1px dotted #FFF;
+    }
+    &:hover {
+      color: #000;
+      border-bottom: 1px solid #000;
+    }
+  }
+}
+.calloutred {
+  background: #993D1B;
+  border-top: 15px solid #006682;
+}
+/*breadcrumbs for WP */
+.breadcrumb {
+  background:none;
+  margin-bottom: 5px;
+  color: #666;
+  a {
+    &:link, &:visited {
+      color: #666;
+      text-decoration: none;
+      border-bottom: 1px dotted #666;
+    }
+    &:hover {
+      color: #d8ab4c;
+    }
+  }
+}
+/*odd table rows */
+.oddrow {
+  background: #EEE;
+}
+.oddline td {
+  border-top: 1px dotted #CCC;
+  border-bottom: 1px dotted #CCC;
+  background: #FDFDFD;
+}
+.stripes th {
+  background: #555;
+  color: #EEE;
+  padding: 10px 8px;
+}
+/* omni */
+.hidden {
+  display: none;
+}
+#de {
+  border-bottom-width: 0;
+}
+/* omni horizontal nav */
+.graphicheader {
+  border-bottom: 1px solid #AAA;
+  padding: 0;
+  margin: 0;
+  .noshow {
+    display: none;
+  }
+}

@@ -1,0 +1,115 @@
+/*Navigation */
+.navbar {
+  min-height: 40px;
+}
+.sitenavigation {
+  position: relative;
+  z-index: 9999;
+  font-size: 1.2em;
+}
+.sitenav, .sitenav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  line-height: 1;
+  z-index: 100;
+  li {
+    float: left;
+    margin: 0;
+    border-right: 1px solid #CCC;
+    &.last {
+      border-right: 1px solid #CCC;
+    }
+    &.noborder {
+      border: 0;
+    }
+    &.current_page_item a {
+      color: #FFF;
+      text-decoration: none;
+      background: #333;
+    }
+    ul {
+      position: absolute;
+      width: 172px;
+      left: -999em;
+      border-right: 1px solid #666;
+      z-index: 9999;
+      background: #666;
+      li {
+        margin: 0;
+        border-bottom: 1px solid #888;
+        border-right: 0;
+        border-left: 0;
+        background: #666;
+        a {
+          background: #666;
+          color: #FFF;
+          font-size: 12px;
+          width: 156px;
+          &:link, &:visited {
+            background: #666;
+          }
+          &:hover {
+            background: #333;
+          }
+        }
+        ul {
+          li {
+            a {
+              border-width:0 1px 1px 0;
+            }
+          }
+        }
+      }
+      ul {
+        margin: -32px 0 0 172px;
+      }
+    }
+    &:hover, &.sfhover {
+      left: auto;
+      ul {
+        ul {
+          left: -999em;
+          ul {
+            left: -999em;
+          }
+        }
+      }
+    }
+    &:hover {
+      position: static;
+      /* IE7 Fix */
+    }
+    li {
+      &:hover, &.sfhover {
+        left: auto;
+      }
+      li {
+        &:hover, &.sfhover {
+          ul {
+            left: auto;
+          }
+        }
+      }
+    }
+  }
+  a {
+    &:link, &:visited {
+      background: #ECECEC;
+      display: block;
+      z-index: 100;
+      padding: 10px 12px;
+      text-decoration:  none;
+      color: #666;
+    }
+    &:hover {
+      color: #FFF;
+      text-decoration: none;
+      background: #333;
+    }
+  }
+  .hover {
+    position: static;
+    /* IE7 Fix */
+  }
+}

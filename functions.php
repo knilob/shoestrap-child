@@ -44,6 +44,11 @@ function shoestrap_child_load_stylesheet() {
   wp_enqueue_style( 'shoestrap_child_css', get_stylesheet_uri(), false, null );
 }
 
+/* Override templates/top-bar */
+function vu_override_top_bar_template() {
+    return 'templates/vu-top-bar';
+}
+add_filter( 'shoestrap_top_bar_template', 'vu_override_top_bar_template' );
 
 function shoestrap_load_slider() {
   global $ss_settings;

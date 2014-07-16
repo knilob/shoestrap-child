@@ -29,7 +29,7 @@
 
         <?php do_action( 'shoestrap_pre_main' ); ?>
 
-        <main class="main <?php shoestrap_section_class( 'main', true ); ?>" <?php if ( is_home() ) { echo 'id="home-blog"'; } ?> role="main">
+        <main class="main secmain <?php shoestrap_section_class( 'main', true ); ?>" <?php if ( is_home() ) { echo 'id="home-blog"'; } ?> role="main">
           <?php do_action( 'shoestrap_pre_wpcontent' ); ?>
           <?php include shoestrap_template_path(); ?>
         </main><!-- /.main -->
@@ -37,7 +37,7 @@
         <?php do_action( 'shoestrap_after_main' ); ?>
 
         <?php if ( shoestrap_display_primary_sidebar() ) : ?>
-          <aside id="sidebar-primary" class="sidebar <?php shoestrap_section_class( 'primary', true ); ?>" role="complementary">
+          <aside id="sidebar-primary" class="sidebar secnav <?php shoestrap_section_class( 'primary', true ); ?>" role="complementary">
             <?php if ( ! has_action( 'shoestrap_sidebar_override' ) ) {
               include shoestrap_sidebar_path();
             } else {
