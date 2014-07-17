@@ -8,8 +8,10 @@ function my_custom_footer_override() {
   <?php echo $ss_framework->open_container( 'div' ); ?>
     <div class="row">
       <?php shoestrap_footer_content_custom(); ?>
-      <div class="col-md-4 social">
-        <?php shoestrap_footer_social_links(); ?>
+      <div class="col-md-4">
+        <div class="social">
+          <?php shoestrap_footer_social_links(); ?>
+        </div>
         <p>
           <span><a href="http://www.vanderbilt.edu/wp-redirect<?php global $current_blog; $blog_path = $current_blog->path; echo $blog_path; ?>">©</a></span>
           <script type="text/javascript">date=new Date(); year=date.getFullYear(); document.write(year);</script>&nbsp;Vanderbilt University · <br><a href="http://web.vanderbilt.edu/">Site Development: University Web Communications</a>
