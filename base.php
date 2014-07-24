@@ -17,14 +17,14 @@
   <?php do_action( 'shoestrap_pre_top_bar' ); ?>
 
   <?php ss_get_template_part( apply_filters( 'shoestrap_top_bar_template', 'templates/top-bar' ) ); ?>
-
+  <div class="content">
   <?php do_action( 'shoestrap_pre_wrap' ); ?>
 
   <?php echo $ss_framework->open_container( 'div', 'wrap-main-section', 'wrap main-section' ); ?>
 
     <?php do_action( 'shoestrap_pre_content' ); ?>
 
-    <div id="content" class="content">
+    <div id="content">
       <?php echo $ss_framework->open_row( 'div', null, 'bg' ); ?>
 
         <?php do_action( 'shoestrap_pre_main' ); ?>
@@ -58,6 +58,7 @@
     </div><!-- /.content -->
     <?php do_action( 'shoestrap_after_content' ); ?>
   <?php echo $ss_framework->close_container( 'div' ); ?><!-- /.wrap -->
+  </div>
   <?php
 
   do_action( 'shoestrap_pre_footer' );

@@ -29,11 +29,14 @@ function shoestrap_slider_display() {
   if ($ss_settings['slide-images'] != "") {
     foreach ($ss_settings['slide-images'] as $slide) {
       echo "<div>";
-      if ($slide['url'] != "") {
+      if ( $slide['url'] != "" && isset( $slide['url'] ) ) {
         echo '<a href="'.$slide['url'].'">';
       }
+      if ( $slide['description'] != "" && isset( $slide['description'] ) ) {
+        echo '<aside class="slide-description">'.$slide['description'].'</aside>';
+      }
       echo '<img src="'.$slide['image'].'" title="'.$slide['title'].'" alt="'.$slide['title'].'">';
-      if ($slide['url'] != "") {
+      if ( $slide['url'] != "" && isset( $slide['url'] ) ) {
         echo '</a>';
       }
       echo "</div>";

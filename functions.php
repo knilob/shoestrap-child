@@ -14,11 +14,11 @@ require_once locate_template('lib/overrides/footer.php');
  * Add a less file from our child theme to the parent theme's compiler.
  * This uses the 'shoestrap_compiler' filter that exists in the shoestrap compiler
  */
-add_filter( 'shoestrap_compiler', 'shoestrap_child_styles' );
-function shoestrap_child_styles( $bootstrap ) {
-  return $bootstrap . '
-  @import "' . get_stylesheet_directory() . '/assets/less/child.less";';
-}
+// add_filter( 'shoestrap_compiler', 'shoestrap_child_styles' );
+// function shoestrap_child_styles( $bootstrap ) {
+//   return $bootstrap . '
+//   @import "' . get_stylesheet_directory() . '/assets/less/child.less";';
+// }
 
 /*
  * Changes the output of the compiled CSS.
@@ -42,6 +42,16 @@ function shoestrap_child_hijack_compiler( $css ) {
 add_action('wp_enqueue_scripts', 'shoestrap_child_load_stylesheet', 103);
 function shoestrap_child_load_stylesheet() {
   wp_enqueue_style( 'shoestrap_child_css', get_stylesheet_uri(), false, null );
+}
+
+/*
+ * Enqueue the generated LESS styles locally for testing
+ */
+if ( strpos( $_SERVER['DOCUMENT_ROOT'], 'linkja' ) )  {
+  add_action('wp_enqueue_scripts', 'shoestrap_child_load_local_less', 104);
+  function shoestrap_child_load_local_less() {
+    wp_enqueue_style( 'shoestrap_local_less', get_stylesheet_directory_uri() . '/assets/css/child.css', false, null );
+  }
 }
 
 /* Override templates/top-bar */

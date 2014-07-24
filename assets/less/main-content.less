@@ -42,6 +42,26 @@
     border-radius: 8px;
   }
 }
+/* Slider */
+.slide-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 400px;
+  width: 200px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  color: #fff;
+  font: normal normal normal 1.2rem/1.6rem Georgia, Times New Roman, Serif;
+  line-height: 2rem;
+  z-index: 1;
+}
+.slick-prev {
+  left: 5px;
+}
+.slick-next {
+  right: 5px;
+}
 .secmain {
   a {
     &:link, &:visited {
@@ -277,8 +297,10 @@
 }
 /*breadcrumbs for WP */
 .breadcrumb {
-  background:none;
-  margin-bottom: 5px;
+  background: none;
+  font-size: 85%;
+  padding: 0;
+  margin: 0 0 1.5em;
   color: #666;
   a {
     &:link, &:visited {
