@@ -6,11 +6,12 @@ function my_custom_sidebar_override() {
   $caltag = $ss_settings['vucaltag'];
   $xslpath = get_bloginfo('stylesheet_directory')."/parse-vu-calendar.xsl";
   // Load the primary sidebar
+  echo '<div class="sidebar secnav">';
   dynamic_sidebar( 'sidebar-primary' );
   if ( $ss_settings['vucalfeed'] == 1 ) :
 ?>
     <section class="vu-calendar well" role="contentinfo">
-      <h3><?php echo $caltitle ?></h3>
+      <h3 class="widget-title"><?php echo $caltitle ?></h3>
       <ul>
       <?php
         $xp = new XsltProcessor();
@@ -41,11 +42,12 @@ function my_custom_sidebar_override() {
     $args = array(
       'before_widget' => '<section class="well widget widget_vunewsfeed rssnews">',
       'after_widget'  => '</section>',
-      'before_title'  => '<h3 class="widget-title">',
+      'before_title'  => '<h3>',
       'after_title'   => '</h3>'
     );
     the_widget( $widget, $instance, $args );
   }
+  echo '</div>';
 }
 
 class Shoestrap_Custom_Sidebar {
