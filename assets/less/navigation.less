@@ -1,6 +1,7 @@
 /*Navigation */
 .navbar {
   min-height: 40px;
+  background-color: #ECECEC;
 }
 .sitenavigation {
   position: relative;
@@ -105,14 +106,24 @@
       text-decoration:  none;
       color: #666;
     }
-    &:hover {
-      color: #FFF;
+    &.dropdown-toggle, &:hover {
       text-decoration: none;
-      background: #333;
+      &:hover {
+        background: #333;
+        color: #FFF !important;
+      }
     }
   }
 //   .hover {
 //     //position: static;
 //     /* IE7 Fix */
 //   }
+}
+.navbar-default .navbar-nav > .active > a {
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #FFF !important;
+  text-decoration: none;
+  background: #333;
 }
