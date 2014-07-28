@@ -8,6 +8,10 @@ Template:           shoestrap-3
 /*
 
 /* General */
+.content {
+  background: #FFF url('http://www.vanderbilt.edu/asset/i/bodygradient.jpg') repeat-x top left;
+  margin: 0; padding: 20px 0 40px 0;
+}
 .panel-default>.panel-heading {font-family: Georgia,Times, serif;font-weight:bold;color: #fff;background:none;border:none;}
 
 /* Banner */
@@ -17,4 +21,12 @@ Template:           shoestrap-3
 .vubanner h1{
   margin: 0;
   line-height: 100%;
+}
+
+/* Footer */
+footer {
+  background: #333 url('http://www.vanderbilt.edu/asset/i/footerbg.jpg') top left no-repeat;
+}
+.social a {
+  background-image: url('http://www.vanderbilt.edu/asset/i/social-icons.png');
 }
