@@ -24,7 +24,7 @@ Template:           shoestrap-3
 }
 
 /* Footer */
-footer {
+footer.content-info {
   background: #333 url('http://www.vanderbilt.edu/asset/i/footerbg.jpg') top left no-repeat;
 }
 .social a {
