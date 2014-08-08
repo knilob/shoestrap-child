@@ -119,7 +119,7 @@ function parse_shortcode_content( $content ) {
 // accordion
 function accordion_open_tag(  $atts, $content = null ) {
   $content = parse_shortcode_content( $content );
-  return "<link rel='stylesheet' type='text/css' href='". get_stylesheet_directory_uri() . "'/assets/css/accordion.css' media='screen' /><script type='text/javascript' src='". get_stylesheet_directory_uri() . "'/assets/js/accordion.js'></script><ul class='accordion collapsible'>".do_shortcode($content)."</ul>";
+  return "<link rel='stylesheet' type='text/css' href='". get_stylesheet_directory_uri() . "/assets/css/accordion.css' media='screen' /><script type='text/javascript' src='". get_stylesheet_directory_uri() . "/assets/js/accordion.js'></script><ul class='accordion collapsible'>".do_shortcode($content)."</ul>";
 }
 
 function accordion_section(  $atts, $content = null ) {
