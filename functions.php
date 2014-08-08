@@ -123,6 +123,7 @@ class Add_Shortcodes {
     add_shortcode('accordions', array(__CLASS__, 'accordion_open'));
     add_shortcode('accordion', array(__CLASS__, 'accordion_section'));
     add_action('init', array(__CLASS__, 'register_script'));
+    add_action('wp_enqueue_scripts', array(__CLASS__, 'enqueue_style'));
     add_action('wp_footer', array(__CLASS__, 'print_script'));
   }
 
@@ -144,6 +145,11 @@ class Add_Shortcodes {
 
   static function register_script() {
     wp_register_script('accordion-script', get_stylesheet_directory_uri() . '/assets/js/accordion.js', array('jquery'), '1.0', true);
+    wp_register_style( 'accordion-style', get_stylesheet_directory_uri() . '/assets/css/accordion.css', array(), 1.0, 'all' );
+  }
+
+  static function enqueue_style() {
+    wp_enqueue_style('accordion-style');
   }
 
   static function print_script() {
