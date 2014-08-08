@@ -100,3 +100,35 @@ function shoestrap_load_slider() {
   }
 }
 add_action( 'init', 'shoestrap_load_slider' );
+
+// lets get rid of weird brs and ps inside shortcodes
+function parse_shortcode_content( $content ) {
+    /* Parse nested shortcodes and add formatting. */
+    $content = trim( wpautop( do_shortcode( $content ) ) );
+    /* Remove '</p>' from the start of the string. */
+    if ( substr( $content, 0, 4 ) == '</p>' )
+        $content = substr( $content, 4 );
+    /* Remove '<p>' from the end of the string. */
+    if ( substr( $content, -3, 3 ) == '<p>' )
+        $content = substr( $content, 0, -3 );
+    /* Remove any instances of '<p></p>'. */
+    $content = str_replace( array( '<p></p>' ), '', $content );
+    return $content;
+}
+
+// accordion
+function accordion_open_tag(  $atts, $content = null ) {
+  $content = parse_shortcode_content( $content );
+  return "<link rel='stylesheet' type='text/css' href='". get_stylesheet_directory_uri() . "'/assets/css/accordion.css' media='screen' /><script type='text/javascript' src='". get_stylesheet_directory_uri() . "'/assets/js/accordion.js'></script><ul class='accordion collapsible'>".do_shortcode($content)."</ul>";
+}
+
+function accordion_section(  $atts, $content = null ) {
+  extract( shortcode_atts( array(
+    'title' => 'no title entered',
+  ), $atts) );
+  $content = parse_shortcode_content($content);
+  return "<li><a href='#'>".$title."</a><div class='acitem'>".$content."</div></li>";
+}
+
+add_shortcode( 'accordions', 'accordion_open_tag' );
+add_shortcode( 'accordion', 'accordion_section' );
