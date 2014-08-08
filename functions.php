@@ -132,3 +132,13 @@ function accordion_section(  $atts, $content = null ) {
 
 add_shortcode( 'accordions', 'accordion_open_tag' );
 add_shortcode( 'accordion', 'accordion_section' );
+
+// shortcode to add customfield info to post by using [field name=customfieldname] where you want unaltered code to appear
+function field_func($atts) {
+   global $post;
+   $name = $atts['name'];
+   if (empty($name)) return;
+
+   return get_post_meta($post->ID, $name, true);
+}
+add_shortcode('field', 'field_func');
