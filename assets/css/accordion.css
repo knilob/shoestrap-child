@@ -15,7 +15,7 @@ ul.accordion li a {
   background: #eee;
   /*background: #EEE url('../i/arrowdown-accordion.png') no-repeat top right;*/
   color: #000 !important;
-  padding: 10px 55px 10px 10px;
+  padding: 10px;
   border: 1px dotted #CCC !important;
 }
 ul.accordion li a:hover {
@@ -30,6 +30,9 @@ ul.accordion li a {
 }
 ul.accordion li a {
   display:block;
+}
+.accordion i {
+  float: right;
 }
 
 /* second level - internal accordion */
