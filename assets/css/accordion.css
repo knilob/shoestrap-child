@@ -12,13 +12,15 @@ ul.accordion li a {
   font-size: 1.0em;
   display: block;
   text-decoration: none;
-  background: #EEE url('../i/arrowdown-accordion.png') no-repeat top right;
+  background: #eee;
+  /*background: #EEE url('../i/arrowdown-accordion.png') no-repeat top right;*/
   color: #000 !important;
   padding: 10px 55px 10px 10px;
   border: 1px dotted #CCC !important;
 }
 ul.accordion li a:hover {
-  background: #CCC url('../i/arrowdown-accordion.png') no-repeat top right;
+  background: #ccc;
+  /*background: #CCC url('../i/arrowdown-accordion.png') no-repeat top right;*/
   color: #FFF !important;
   border: 1px dotted #AAA !important;
 }
@@ -57,7 +59,8 @@ ul.accordion ul.accordion li a:hover {
 
 /* ACTIVELY OPENED ACC */
 ul.accordion a.active, ul ul.accordion li a.active, ul.accordion a.active:hover, ul ul.accordion li a.active:hover {
-  background: #444 url('../i/arrowup-accordion.png') no-repeat top right !important;
+  background: #444;
+  /*background: #444 url('../i/arrowup-accordion.png') no-repeat top right !important;*/
   color: #FFF !important;
   font-weight: bold;
 }
