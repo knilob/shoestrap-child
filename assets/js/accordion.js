@@ -75,10 +75,10 @@ jQuery.fn.initMenu = function () {
                     jQuery(theElement).slideToggle('750', function () {
                         if (jQuery(this).is(':visible')) {
                             jQuery(this).prev().addClass('active');
-                            jQuery(this).prev().children().removeClass('el-icon-down').addClass('el-icon-up');
+                            jQuery(this).prev().children().removeClass('el-icon-caret-down').addClass('el-icon-caret-up');
                         } else {
                             jQuery(this).prev().removeClass('active');
-                            jQuery(this).prev().children().removeClass('el-icon-up').addClass('el-icon-down');
+                            jQuery(this).prev().children().removeClass('el-icon-caret-up').addClass('el-icon-caret-down');
                         }
                     });
                     return false;
@@ -88,7 +88,7 @@ jQuery.fn.initMenu = function () {
                         jQuery('.acitem:visible', parent).first().slideUp('750',
                             function () {
                                 jQuery(this).prev().removeClass('active');
-                                jQuery(this).prev().children().removeClass('el-icon-up').addClass('el-icon-down');
+                                jQuery(this).prev().children().removeClass('el-icon-caret-up').addClass('el-icon-caret-down');
                             }
                             );
                         return false;
@@ -98,11 +98,11 @@ jQuery.fn.initMenu = function () {
                 if (theElement.hasClass('acitem') && !theElement.is(':visible')) {
                     jQuery('.acitem:visible', parent).first().slideUp('750', function () {
                         jQuery(this).prev().removeClass('active');
-                        jQuery(this).prev().children().removeClass('el-icon-up').addClass('el-icon-down');
+                        jQuery(this).prev().children().removeClass('el-icon-caret-up').addClass('el-icon-caret-down');
                     });
                     theElement.slideDown('normal', function () {
                         jQuery(this).prev().addClass('active');
-                        jQuery(this).prev().children().removeClass('el-icon-down').addClass('el-icon-up');
+                        jQuery(this).prev().children().removeClass('el-icon-caret-down').addClass('el-icon-caret-up');
                     });
                     return false;
                 }
