@@ -175,7 +175,7 @@ function accordion_section(  $atts, $content = null ) {
     'title' => 'no title entered',
   ), $atts) );
   $content = parse_shortcode_content($content);
-  return "<li><a href='#'>".$title."<i class=\"el-icon-caret-down\"></a><div class='acitem'>".$content."</div></li>";
+  return "<li><a href='#'>".$title."<i class=\"el-icon-caret-down\"></i></a><div class='acitem'>".$content."</div></li>";
 }
 
 add_shortcode( 'accordions', 'accordion_open_tag' );
