@@ -116,68 +116,71 @@ function parse_shortcode_content( $content ) {
     return $content;
 }
 
-class Add_Shortcodes {
-  static $add_script;
+// class Add_Shortcodes {
+//   static $add_script;
 
-  static function init() {
-    add_shortcode('accordions', array(__CLASS__, 'accordion_open'));
-    add_shortcode('accordion', array(__CLASS__, 'accordion_section'));
-    add_action('init', array(__CLASS__, 'register_script'));
-    add_action('wp_enqueue_scripts', array(__CLASS__, 'enqueue_style'));
-    add_action('wp_footer', array(__CLASS__, 'print_script'));
-  }
+//   static function init() {
+//     add_shortcode('accordions', array(__CLASS__, 'accordion_open'));
+//     add_shortcode('accordion', array(__CLASS__, 'accordion_section'));
+//     add_action('init', array(__CLASS__, 'register_script'));
+//     add_action('wp_enqueue_scripts', array(__CLASS__, 'enqueue_style'));
+//     add_action('wp_footer', array(__CLASS__, 'print_script'));
+//   }
 
-  static function accordion_open($atts, $content = null) {
-    self::$add_script = true;
+//   static function accordion_open($atts, $content = null) {
+//     self::$add_script = true;
 
-    // actual shortcode handling here
-    $content = parse_shortcode_content( $content );
-    return "<ul class='accordion collapsible'>".do_shortcode($content)."</ul>";
-  }
+//     // actual shortcode handling here
+//     $content = parse_shortcode_content( $content );
+//     return "<ul class='accordion collapsible'>".do_shortcode($content)."</ul>";
+//   }
 
-  static function accordion_section($atts, $content = null) {
-    extract( shortcode_atts( array(
-      'title' => 'no title entered',
-    ), $atts) );
-    $content = parse_shortcode_content($content);
-    return "<li><a href='#'>".$title."</a><div class='acitem'>".$content."</div></li>";
-  }
+//   static function accordion_section($atts, $content = null) {
+//     extract( shortcode_atts( array(
+//       'title' => 'no title entered',
+//     ), $atts) );
+//     $content = parse_shortcode_content($content);
+//     return "<li><a href='#'>".$title."</a><div class='acitem'>".$content."</div></li>";
+//   }
 
-  static function register_script() {
-    wp_register_script('accordion-script', get_stylesheet_directory_uri() . '/assets/js/accordion.js', array('jquery'), '1.0', true);
-    wp_register_style( 'accordion-style', get_stylesheet_directory_uri() . '/assets/css/accordion.css', array(), 1.0, 'all' );
-  }
+//   static function register_script() {
+//     wp_register_script('accordion-script', get_stylesheet_directory_uri() . '/assets/js/accordion.js', array('jquery'), '1.0', true);
+//     wp_register_style( 'accordion-style', get_stylesheet_directory_uri() . '/assets/css/accordion.css', array(), 1.0, 'all' );
+//   }
 
-  static function enqueue_style() {
-    wp_enqueue_style('accordion-style');
-  }
+//   static function enqueue_style() {
+//     wp_enqueue_style('accordion-style');
+//   }
 
-  static function print_script() {
-    if ( ! self::$add_script )
-      return;
+//   static function print_script() {
+//     if ( ! self::$add_script )
+//       return;
 
-    wp_print_scripts('accordion-script');
-  }
-}
+//     wp_print_scripts('accordion-script');
+//   }
+// }
 
-Add_Shortcodes::init();
+// Add_Shortcodes::init();
 
 // accordion
-// function accordion_open_tag(  $atts, $content = null ) {
-//   $content = parse_shortcode_content( $content );
-//   return "<link rel='stylesheet' type='text/css' href='". get_stylesheet_directory_uri() . "/assets/css/accordion.css' media='screen' /><script type='text/javascript' src='". get_stylesheet_directory_uri() . "/assets/js/accordion.js'></script><ul class='accordion collapsible'>".do_shortcode($content)."</ul>";
-// }
+function accordion_open_tag(  $atts, $content = null ) {
+  wp_enqueue_script('accordion-script', get_stylesheet_directory_uri() . '/assets/js/min/accordion-min.js', array('jquery'), '1.0', true);
+  wp_enqueue_style('accordion-css', get_stylesheet_directory_uri() . '/assets/css/accordion.css', array(''), '1.0', all);
+  $content = parse_shortcode_content( $content );
 
-// function accordion_section(  $atts, $content = null ) {
-//   extract( shortcode_atts( array(
-//     'title' => 'no title entered',
-//   ), $atts) );
-//   $content = parse_shortcode_content($content);
-//   return "<li><a href='#'>".$title."</a><div class='acitem'>".$content."</div></li>";
-// }
+  return "<ul class='accordion collapsible'>".do_shortcode($content)."</ul>";
+}
 
-// add_shortcode( 'accordions', 'accordion_open_tag' );
-// add_shortcode( 'accordion', 'accordion_section' );
+function accordion_section(  $atts, $content = null ) {
+  extract( shortcode_atts( array(
+    'title' => 'no title entered',
+  ), $atts) );
+  $content = parse_shortcode_content($content);
+  return "<li><a href='#'>".$title."</a><div class='acitem'>".$content."</div></li>";
+}
+
+add_shortcode( 'accordions', 'accordion_open_tag' );
+add_shortcode( 'accordion', 'accordion_section' );
 
 // shortcode to add customfield info to post by using [field name=customfieldname] where you want unaltered code to appear
 function field_func($atts) {
