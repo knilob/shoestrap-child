@@ -102,19 +102,19 @@ function shoestrap_load_slider() {
 add_action( 'init', 'shoestrap_load_slider' );
 
 // lets get rid of weird brs and ps inside shortcodes
-function parse_shortcode_content( $content ) {
-    /* Parse nested shortcodes and add formatting. */
-    $content = trim( wpautop( do_shortcode( $content ) ) );
-    /* Remove '</p>' from the start of the string. */
-    if ( substr( $content, 0, 4 ) == '</p>' )
-        $content = substr( $content, 4 );
-    /* Remove '<p>' from the end of the string. */
-    if ( substr( $content, -3, 3 ) == '<p>' )
-        $content = substr( $content, 0, -3 );
-    /* Remove any instances of '<p></p>'. */
-    $content = str_replace( array( '<p></p>' ), '', $content );
-    return $content;
-}
+// function parse_shortcode_content( $content ) {
+//     /* Parse nested shortcodes and add formatting. */
+//     $content = trim( wpautop( do_shortcode( $content ) ) );
+//     /* Remove '</p>' from the start of the string. */
+//     if ( substr( $content, 0, 4 ) == '</p>' )
+//         $content = substr( $content, 4 );
+//     /* Remove '<p>' from the end of the string. */
+//     if ( substr( $content, -3, 3 ) == '<p>' )
+//         $content = substr( $content, 0, -3 );
+//     /* Remove any instances of '<p></p>'. */
+//     $content = str_replace( array( '<p></p>' ), '', $content );
+//     return $content;
+// }
 
 // class Add_Shortcodes {
 //   static $add_script;
@@ -163,29 +163,29 @@ function parse_shortcode_content( $content ) {
 // Add_Shortcodes::init();
 
 // accordion
-function accordion_open_tag(  $atts, $content = null ) {
-  wp_enqueue_script('accordion-script', get_stylesheet_directory_uri() . '/assets/js/accordion.js', array('jquery'), '1.0', true);
-  $content = parse_shortcode_content( $content );
+// function accordion_open_tag(  $atts, $content = null ) {
+//   wp_enqueue_script('accordion-script', get_stylesheet_directory_uri() . '/assets/js/accordion.js', array('jquery'), '1.0', true);
+//   $content = parse_shortcode_content( $content );
 
-  return "<link rel='stylesheet' type='text/css' href='" . get_stylesheet_directory_uri() . "/assets/css/accordion.css' media='screen' /><ul class='accordion collapsible'>".do_shortcode($content)."</ul>";
-}
+//   return "<link rel='stylesheet' type='text/css' href='" . get_stylesheet_directory_uri() . "/assets/css/accordion.css' media='screen' /><ul class='accordion collapsible'>".do_shortcode($content)."</ul>";
+// }
 
-function accordion_section(  $atts, $content = null ) {
-  extract( shortcode_atts( array(
-    'title' => 'no title entered',
-  ), $atts) );
-  $content = parse_shortcode_content($content);
-  return "<li><a href='#'>".$title."<i class=\"el-icon-caret-down\"></i></a><div class='acitem'>".$content."</div></li>";
-}
+// function accordion_section(  $atts, $content = null ) {
+//   extract( shortcode_atts( array(
+//     'title' => 'no title entered',
+//   ), $atts) );
+//   $content = parse_shortcode_content($content);
+//   return "<li><a href='#'>".$title."<i class=\"el-icon-caret-down\"></i></a><div class='acitem'>".$content."</div></li>";
+// }
 
-add_shortcode( 'accordions', 'accordion_open_tag' );
-add_shortcode( 'accordion', 'accordion_section' );
+// add_shortcode( 'accordions', 'accordion_open_tag' );
+// add_shortcode( 'accordion', 'accordion_section' );
 
-// shortcode to add customfield info to post by using [field name=customfieldname] where you want unaltered code to appear
-function field_func($atts) {
-   global $post;
-   $name = $atts['name'];
-   if (empty($name)) return;
-   return get_post_meta($post->ID, $name, true);
-}
-add_shortcode('field', 'field_func');
+// // shortcode to add customfield info to post by using [field name=customfieldname] where you want unaltered code to appear
+// function field_func($atts) {
+//    global $post;
+//    $name = $atts['name'];
+//    if (empty($name)) return;
+//    return get_post_meta($post->ID, $name, true);
+// }
+// add_shortcode('field', 'field_func');
