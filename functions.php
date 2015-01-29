@@ -47,12 +47,12 @@ function shoestrap_child_load_stylesheet() {
 /*
  * Enqueue the generated LESS styles locally for testing
  */
-// if ( strpos( $_SERVER['DOCUMENT_ROOT'], 'linkja' ) )  {
-//   add_action('wp_enqueue_scripts', 'shoestrap_child_load_local_less', 104);
-//   function shoestrap_child_load_local_less() {
-//     wp_enqueue_style( 'shoestrap_local_less', get_stylesheet_directory_uri() . '/assets/css/style.css', false, null );
-//   }
-// }
+if ( strpos( $_SERVER['DOCUMENT_ROOT'], 'linkja' ) )  {
+  add_action('wp_enqueue_scripts', 'shoestrap_child_load_local_less', 104);
+  function shoestrap_child_load_local_less() {
+    wp_enqueue_style( 'shoestrap_local_less', get_stylesheet_directory_uri() . '/assets/css/style.css', false, null );
+  }
+}
 
 /* Override templates/top-bar */
 function vu_override_top_bar_template() {
