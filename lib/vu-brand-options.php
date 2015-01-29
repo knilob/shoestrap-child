@@ -56,7 +56,13 @@ function shoestrap_brandbar_options( $sections ) {
         'url'             => __('Add a link for the slide.', 'shoestrap_child'),
 	   )
 	 );
-
+  $fields[] = array(
+    'title'   => __( 'Pages to Hide from Navigation', 'shoestrap_child' ),
+    'desc'    => 'Insert a comma separate list of Page IDs to hide from any automatically generated navigation lists.',
+    'id'      => 'vuhidepages',
+    'type'    => 'text',
+    'default' => ''
+  );
 	 // Branding Options
   $bannerSection = array(
     'title' => __( 'Graphic Header', 'shoestrap_child' ),
@@ -101,6 +107,14 @@ function shoestrap_brandbar_options( $sections ) {
 		'icon'    => 'el-icon-chevron-right',
 		'subsection' => true,
 	);
+
+  $sidebarFields[] = array(
+    'title'   => __( 'Show Child Pages', 'shoestrap_child' ),
+    'desc'    => 'Use this option to display links to any child pages for the current page in the sidebar.',
+    'id'      => 'vuchildpages',
+    'type'    => 'switch',
+    'default' => '0'
+  );
 
 	$sidebarFields[] = array(
 		'title'		=> __( 'VU News Feed', 'shoestrap_child' ),
