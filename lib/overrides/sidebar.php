@@ -8,6 +8,9 @@ function my_custom_sidebar_override() {
   // Load the primary sidebar
   echo '<div class="sidebar secnav">';
   dynamic_sidebar( 'sidebar-primary' );
+  if (has_action( 'shoestrap_sidebar_plugin_override')) {
+    do_action( 'shoestrap_sidebar_plugin_override' );
+  }
   if ( $ss_settings['vucalfeed'] == 1 ) :
 ?>
     <section class="vu-calendar well" role="contentinfo">
