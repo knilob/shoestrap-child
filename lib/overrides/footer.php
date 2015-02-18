@@ -12,7 +12,6 @@ function my_custom_footer_override() {
         <div class="social">
           <?php shoestrap_footer_social_links(); ?>
         </div>
-        <?php shoestrap_footer_content(); ?>
         <p>
           <span><a href="http://www.vanderbilt.edu/wp-redirect<?php global $current_blog; $blog_path = $current_blog->path; echo $blog_path; ?>">©</a></span>
           <script type="text/javascript">date=new Date(); year=date.getFullYear(); document.write(year);</script>&nbsp;Vanderbilt University · <br><a href="http://web.vanderbilt.edu/">Site Development: University Web Communications</a>
@@ -44,7 +43,7 @@ function shoestrap_footer_content_custom() {
       // Setting each column width accordingly
       $col_class = 8 / $num_of_sidebars;
 
-    if($i == 1){$col_class = 2;}
+    if($i == 1){$col_class = 8;}
     if($i == 2){$col_class = 4;}
     if($i == 3){$col_class = 2;}
     if($i == 4){$col_class = 2;}
