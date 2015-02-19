@@ -7,6 +7,7 @@ if ( !defined( 'SHOESTRAP_OPT_NAME' ) )
 #require_once locate_template( 'lib/vu-banner-options.php' );
 require_once locate_template( 'lib/vu-brand-options.php' );
 //load overrides
+// require_once locate_template( 'lib/overrides/single.php' );
 require_once locate_template( 'lib/overrides/sidebar.php' );
 require_once locate_template( 'lib/overrides/footer.php' );
 
