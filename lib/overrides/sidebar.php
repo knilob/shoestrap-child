@@ -38,23 +38,25 @@ function my_custom_sidebar_override() {
   if ($ss_settings['vuchildpages'] == 1) {
     $post = get_post();
     $hidethese = $ss_settings['vuhidepages'];
-    if ($post->post_parent) {
-      $children = wp_list_pages("title_li=&depth=1&sort_column=menu_order&child_of=".$post->post_parent."&echo=0&exclude=".$hidethese);
-      $titlenamer = get_the_title($post->post_parent);
-    } else {
-      $children = wp_list_pages("title_li=&depth=1&sort_column=menu_order&child_of=".$post->ID."&echo=0&exclude=".$hidethese);
-      $titlenamer = get_the_title($post->ID);
-    }
-    if ($children) :
+    if (isset($post)) {
+      if ($post->post_parent) {
+        $children = wp_list_pages("title_li=&depth=1&sort_column=menu_order&child_of=".$post->post_parent."&echo=0&exclude=".$hidethese);
+        $titlenamer = get_the_title($post->post_parent);
+      } else {
+        $children = wp_list_pages("title_li=&depth=1&sort_column=menu_order&child_of=".$post->ID."&echo=0&exclude=".$hidethese);
+        $titlenamer = get_the_title($post->ID);
+      }
+      if ($children) :
 ?>
-    <section class="vu-childpages well" role="contentinfo">
-      <h3 class="widget-title"><?php echo $titlenamer ?></h3>
-      <ul>
-        <?php echo $children; ?>
-      </ul>
-    </section>
+      <section class="vu-childpages well" role="contentinfo">
+        <h3 class="widget-title"><?php echo $titlenamer ?></h3>
+        <ul>
+          <?php echo $children; ?>
+        </ul>
+      </section>
 <?php
-    endif;
+      endif;
+    }
   }
   if ( $ss_settings['vunewsfeed'] = 1 ) {
     $widget = 'WP_Widget_RSS';
