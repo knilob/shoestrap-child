@@ -9,15 +9,21 @@ while ( have_posts() ) : the_post();
    shoestrap_title_section();
 endwhile;
 
-$temp = $wp_query;
-$wp_query= null;
-$wp_query = new WP_Query();
 if($show_category!='') {
-  $wp_query->query('showposts=15&category_name='.$show_category.'&paged='.$paged);
+  $args = array(
+    'showposts' => 15,
+    'category_name' => $show_category,
+    'paged' => $paged,
+    'post_type' => array( 'post',  'journalarticles' )
+  );
 } else {
-  $wp_query->query('showposts=15'.'&paged='.$paged);
+  $args = array(
+    'showposts' => 15,
+    'paged' => $paged
+  );
 }
-while ($wp_query->have_posts()) : $wp_query->the_post();
+$posts_query = new WP_Query( $args );
+while ($posts_query->have_posts()) : $posts_query->the_post();
   echo '<article class="category-post">';
   echo "<a href=\"" . get_the_permalink() . "\">";
   if (has_post_thumbnail()) {
@@ -35,6 +41,7 @@ while ($wp_query->have_posts()) : $wp_query->the_post();
   echo '</small></p>';
   echo '</article>';
 endwhile;
+wp_reset_postdata();
 
   echo $ss_framework->clearfix();
   // shoestrap_meta( 'cats' );
