@@ -58,7 +58,7 @@ function my_custom_sidebar_override() {
       endif;
     }
   }
-  if ( $ss_settings['vunewsfeed'] = 1 ) {
+  if ( $ss_settings['vunewsfeed'] == 1 ) {
     $widget = 'WP_Widget_RSS';
     $instance = array(
       'title' => $ss_settings['vunewsfeedtitle'],
