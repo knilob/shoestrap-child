@@ -189,3 +189,12 @@ function field_func($atts) {
    return get_post_meta($post->ID, $name, true);
 }
 add_shortcode('field', 'field_func');
+
+/**
+ * Add Post Tags to Page Content Types.
+ */
+// add_action( 'init', 'add_taxonomies_for_objects' );
+
+// function add_taxonomies_for_objects() {
+//   register_taxonomy( 'post_tag', 'page' );
+// }
