@@ -193,8 +193,8 @@ add_shortcode('field', 'field_func');
 /**
  * Add Post Tags to Page Content Types.
  */
-// add_action( 'init', 'add_taxonomies_for_objects' );
+add_action( 'init', 'add_taxonomies_for_objects' );
 
-// function add_taxonomies_for_objects() {
-//   register_taxonomy( 'post_tag', 'page' );
-// }
+function add_taxonomies_for_objects() {
+  register_taxonomy( 'post_tag', 'page' );
+}
