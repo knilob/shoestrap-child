@@ -1,4 +1,11 @@
 <?php
+// disable XML-RPC PING
+add_filter( 'xmlrpc_methods', 'remove_xmlrpc_pingback_ping' );
+function remove_xmlrpc_pingback_ping( $methods ) {
+  unset( $methods['pingback.ping'] );
+  return $methods;
+} ;
+
 if ( !defined( 'SHOESTRAP_OPT_NAME' ) )
   define( 'SHOESTRAP_OPT_NAME', 'shoestrap' );
 
