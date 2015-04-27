@@ -6,6 +6,22 @@ function remove_xmlrpc_pingback_ping( $methods ) {
   return $methods;
 } ;
 
+// disable autocomplete
+add_action('login_init', 'autocomplete_login_init');
+function autocomplete_login_init()
+{
+  ob_start();
+}
+
+add_action('login_form', 'autocomplete_login_form');
+function autocomplete_login_form()
+{
+  $content = ob_get_contents();
+  ob_end_clean();
+  $content = str_replace('id="user_pass"', 'id="user_pass" autocomplete="off"', $content);
+  echo $content;
+}
+
 if ( !defined( 'SHOESTRAP_OPT_NAME' ) )
   define( 'SHOESTRAP_OPT_NAME', 'shoestrap' );
 
