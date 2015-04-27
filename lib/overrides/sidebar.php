@@ -11,6 +11,7 @@ function my_custom_sidebar_override() {
   if (has_action( 'shoestrap_sidebar_plugin_override')) {
     do_action( 'shoestrap_sidebar_plugin_override' );
   }
+  dynamic_sidebar( 'sidebar-secondary' );
   if ( $ss_settings['vucalfeed'] == 1 ) :
 ?>
     <section class="vu-calendar well" role="contentinfo">
