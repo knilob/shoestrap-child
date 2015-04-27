@@ -196,5 +196,5 @@ add_shortcode('field', 'field_func');
 add_action( 'init', 'add_taxonomies_for_objects' );
 
 function add_taxonomies_for_objects() {
-  register_taxonomy( 'post_tag', 'page' );
+  register_taxonomy_for_object_type( 'post_tag', 'page' );
 }
