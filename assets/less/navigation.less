@@ -119,10 +119,18 @@
 //     /* IE7 Fix */
 //   }
 }
-.navbar-default .navbar-nav > .active > a {
+.navbar-default .navbar-nav > .active > a,
+.navbar .dropdown-menu .active a,
+.navbar .dropdown-menu li:hover a {
   background-color: transparent;
 }
-.navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
   color: #FFF !important;
   text-decoration: none;
   background: #333;
