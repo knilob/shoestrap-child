@@ -221,3 +221,24 @@ add_action( 'init', 'add_taxonomies_for_objects' );
 function add_taxonomies_for_objects() {
   register_taxonomy_for_object_type( 'post_tag', 'page' );
 }
+
+/**
+ * Remove Shoestrap Admin Bar Filter
+ */
+function remove_default_admin_bar_filter() {
+  global $ss_advanced;
+  remove_filter( 'show_admin_bar', array( $ss_advanced, 'admin_bar' ) );
+}
+add_action( 'wp', 'remove_default_admin_bar_filter' );
+
+/**
+ * Add Admin Bar for Logged in Users
+ */
+function hide_adminbar() {
+  if (!is_user_logged_in()) {
+    return false;
+  } else {
+    return true;
+  }
+}
+add_filter( 'show_admin_bar', 'hide_adminbar' );
