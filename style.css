@@ -9,10 +9,16 @@ Template:           shoestrap-3
 
 /* General */
 .content {
-  background: #FFF url('http://www.vanderbilt.edu/asset/i/bodygradient.jpg') repeat-x top left;
+  background: #FFF url('https://www4.vanderbilt.edu/asset/i/bodygradient.jpg') repeat-x top left;
   margin: 0; padding: 20px 0 40px 0;
 }
-.panel-default>.panel-heading {font-family: Georgia,Times, serif;font-weight:bold;color: #fff;background:none;border:none;}
+.panel-default>.panel-heading {
+  font-family: Georgia,Times, serif;
+  font-weight:bold;
+  color: #fff;
+  background:none;
+  border:none;
+}
 
 /* Banner */
 .vubanner{
@@ -25,8 +31,8 @@ Template:           shoestrap-3
 
 /* Footer */
 footer.content-info {
-  background: #333 url('http://www.vanderbilt.edu/asset/i/footerbg.jpg') top left no-repeat;
+  background: #333 url('https://www4.vanderbilt.edu/asset/i/footerbg.jpg') top left no-repeat;
 }
 .social a {
-  background-image: url('http://www.vanderbilt.edu/asset/i/social-icons.png');
+  background-image: url('https://www4.vanderbilt.edu/asset/i/social-icons.png');
 }
